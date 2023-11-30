@@ -4,14 +4,14 @@ const { verifyAndAuthorization, verifyAndAdmin } = require("../middleware/verify
 
 
 // UPDATE
-router.put("/:id", verifyAndAuthorization, userController.updateUser);
+router.put("/", verifyAndAuthorization, userController.updateUser);
 
 
 // DELETE 
-router.delete("/:id", verifyAndAuthorization, userController.deleteUser);
+router.delete("/", verifyAndAuthorization, userController.deleteUser);
 
 // GET
-router.get("/:id", verifyAndAuthorization, userController.getUser);
+router.get("/", verifyAndAuthorization, userController.getUser);
 
 // GET
 router.get("/", verifyAndAdmin, userController.getAllUser);
