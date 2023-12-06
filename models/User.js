@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema(
         isAgent: {type: Boolean, default: false},
         skills: {type: Array, default: false},
         profile: {type: String, require: true, default: "https://i.ibb.co/TkGSh0m/PP.jpg"},
+        phone: {type: String, default: ""},
     }, {timestamps: true}
 );
 
