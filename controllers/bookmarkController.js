@@ -37,8 +37,9 @@ module.exports = {
     getBookmarks: async (req, res) => {
         try {
              const bookmarks = await Bookmark.find({agentId: req.params.agentId});
+             const { password, __v, createdAt, ...others} = bookmarks._doc;
              const userId = req.params.agentId;
-             res.status(200).json(bookmarks, userId);
+             res.status(200).json({...others, userId});
          } catch ( error ) {
              res.status(500).json(error);
          }
