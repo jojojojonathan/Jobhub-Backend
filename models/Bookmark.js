@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const BookmarkSchema = new mongoose.Schema(
   {
-    id: { type: String, require: true },
+    job: { type: String, require: true },
     title: { type: String, require: true },
     location: { type: String, require: true },
     company: { type: String, require: true },
