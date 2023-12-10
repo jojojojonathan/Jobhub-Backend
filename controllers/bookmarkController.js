@@ -4,11 +4,11 @@ const Job = require("../models/Job");
 module.exports = {
     createBookmark: async (req, res) => {
         const jobId = req.body.job;
-        const newBookmark = new Bookmark({job: jobId, userId: req.user.id});
         // const newBookmark = new Bookmark(req.body);
-
+        
         try {
             const job = await Job.findById(jobId);
+            const newBookmark = new Bookmark({job: job, userId: req.user.id});
             console.log(job)
             if ( !job ) {
                 return res.status(404).json("Job Not Found");
