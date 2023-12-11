@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
+
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.token;
 
@@ -11,9 +12,7 @@ const verifyToken = (req, res, next) => {
             if(err) res.status(403).json('Invalid Token')
 
             req.user = user;
-
             console.log(user);
-
             next();
         })
     } else {

@@ -16,7 +16,7 @@ module.exports = {
                 }, {new: true}
             );
             const { password, __v, createdAt, ...others } = updateUser._doc;
-
+            console.log(others)
             res.status(200).json({...others})
         } catch ( error ) {
             res.status(500).json(error)
@@ -42,7 +42,7 @@ module.exports = {
             
             const { password, __v, createdAt, updateAt, ...userData } = user._doc;
 
-
+            console.log(userData)
             res.status(200).json(userData);
         } catch ( error ) {
             res.status(500).json(error)
@@ -56,7 +56,7 @@ module.exports = {
             
             // const { password, __v, createdAt, updateAt, ...userData } = user._doc;
 
-
+            console.log(allUsers)
             res.status(200).json(allUsers);
         } catch ( error ) {
             res.status(500).json(error)

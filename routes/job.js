@@ -6,7 +6,6 @@ const { verifyAndAuthorization, verifyAndAdmin } = require("../middleware/verify
 // CREATE
 router.post("/", verifyAndAdmin, jobController.createJob);
 
-
 // UPDATE 
 router.put("/:id", verifyAndAdmin, jobController.updateJob);
 
@@ -19,9 +18,7 @@ router.get("/:id", jobController.getJob);
 // GET ALL
 router.get("/", jobController.getAllJob);
 
-
 // SEARCH
 router.get("/search/:key", jobController.searchJob);
-
 
 module.exports = router

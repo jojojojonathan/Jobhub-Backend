@@ -54,6 +54,7 @@ module.exports = {
         })
       );
       
+      console.log(bookmarksWithJobDetails)
       // const { updateAt, createdAt, ...bookmarkInfo } = bookmarksWithJobDetails._doc;
       res.status(200).json(bookmarksWithJobDetails);
     } catch (error) {

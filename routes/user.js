@@ -6,7 +6,6 @@ const { verifyAndAuthorization, verifyAndAdmin } = require("../middleware/verify
 // UPDATE
 router.put("/", verifyAndAuthorization, userController.updateUser);
 
-
 // DELETE 
 router.delete("/", verifyAndAuthorization, userController.deleteUser);
 
@@ -15,7 +14,5 @@ router.get("/", verifyAndAuthorization, userController.getUser);
 
 // GET
 router.get("/", verifyAndAdmin, userController.getAllUser);
-
-
 
 module.exports = router

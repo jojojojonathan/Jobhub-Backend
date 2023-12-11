@@ -6,14 +6,10 @@ const { verifyToken, verifyAndAuthorization } = require("../middleware/verifyTok
 // CREATE BOOKMARKS
 router.post("/", bookmarkController.createBookmark);
 
-
 // DELETE BOOKMARKS
 router.delete("/:id", verifyToken, bookmarkController.deleteBookmark);
 
-
 // GET BOOKMARKS
 router.get("/", verifyAndAuthorization, bookmarkController.getBookmarks);
-
-
 
 module.exports = router
