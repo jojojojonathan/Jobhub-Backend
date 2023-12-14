@@ -12,7 +12,6 @@ module.exports = {
 
         try {
             const savedUser = await newUser.save();
-            console.log(savedUser)
             res.status(201).json(savedUser);
         } catch ( error ) {
             res.status(500).json(error);
@@ -33,9 +32,7 @@ module.exports = {
 
             const userToken = jwt.sign({
                 id: user._id, isAdmin: user.isAdmin, isAgent: user.isAgent
-            }, process.env.JWT_SEC, {expiresIn: "21d"})
-
-            console.log({...others, userToken})
+            }, process.env.JWT_SEC, {expiresIn: "21d"});
 
             res.status(200).json({...others, userToken});
         } catch (error) {

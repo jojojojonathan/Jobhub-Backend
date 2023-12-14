@@ -33,7 +33,6 @@ module.exports = {
             try {
                 const createdChat = await Chat.create(ChatData);
                 const fullChat = await Chat.findOne({_id: createdChat._id}).populate("users", "-password");
-                // console.log(fullChat)
                 res.status(200).json(fullChat);
             } catch (error) {
                 res.status(400).json("Failed to retrieve chat")

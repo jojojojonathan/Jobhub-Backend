@@ -8,7 +8,7 @@ module.exports = {
             const savedJob = await newJob.save();
 
             const { password, __v, createdAt, updateAt, ...newJobInfo} = savedJob._doc;
-            console.log(newJobInfo)
+            
             res.status(200).json(newJobInfo);
         } catch ( error ) {
             res.status(500).json(error);
@@ -24,7 +24,7 @@ module.exports = {
             );
 
             const { password, __v, createdAt, updateAt, ...updateJobInfo} = updateJob._doc;
-            console.log(updateJobInfo)
+            
             res.status(200).json(updateJobInfo);
         } catch ( error ) {
             res.status(500).json(error);
@@ -46,7 +46,7 @@ module.exports = {
              const job = await Job.findById(req.params.id);
             
              const { password, __v, createdAt, updateAt, ...jobInfo} = job._doc;
-            console.log(jobInfo)
+             
              res.status(200).json(jobInfo);
          } catch ( error ) {
              res.status(500).json(error);
@@ -56,7 +56,7 @@ module.exports = {
      getAllJob: async (req, res) => {
         try {
              const jobs = await Job.find();
-             console.log(jobs)
+             
              res.status(200).json(jobs);
          } catch ( error ) {
              res.status(500).json(error);
@@ -80,7 +80,7 @@ module.exports = {
                     }
                   ]
              );
-             console.log(result)
+             
              res.status(200).json(result);
          } catch ( error ) {
              res.status(500).json(error);

@@ -24,11 +24,10 @@ module.exports = {
         const savedBookmark = await newBook.save();
         
         const { __v, updateAt, createdAt, ...newBookmarkInfo } = savedBookmark._doc;
-        console.log(newBookmarkInfo)
+        
         res.status(200).json(newBookmarkInfo);
       });
     } catch (error) {
-      console.log(error);
       res.status(500).json(error);
     }
   },
@@ -55,11 +54,8 @@ module.exports = {
         })
       );
       
-      console.log(bookmarksWithJobDetails)
-      // const { updateAt, createdAt, ...bookmarkInfo } = bookmarksWithJobDetails._doc;
       res.status(200).json(bookmarksWithJobDetails);
     } catch (error) {
-      console.log(error)
       res.status(500).json(error);
     }
   },

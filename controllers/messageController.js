@@ -32,7 +32,7 @@ module.exports = {
         const {content, chatId, receiver} = req.body;
 
         if (!content || !chatId) {
-            console.log("invalid data");
+            
             return res.status(400).json("Invalid Data");
         }
 
