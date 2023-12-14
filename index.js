@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
         var room = chat._id;
 
         var sender = newMessageReceived.sender;
-
+        console.log(sender, "senderId")
         if (!sender || sender._id) {
             console.log("Sender not defined");
             return;
