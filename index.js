@@ -72,7 +72,7 @@ io.on("connection", (socket) => {
         var sender = newMessageReceived.sender;
         console.log(sender, "sender")
         console.log(sender._id, "senderId")
-        if (!sender || sender._id) {
+        if (!sender || !sender._id) {
             console.log("Sender not defined");
             return;
         }
